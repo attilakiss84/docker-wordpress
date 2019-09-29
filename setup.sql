@@ -1,0 +1,5 @@
+DROP DATABASE IF EXISTS DB; -- This is added in order to be able to rebuild the database from existing stage
+CREATE DATABASE DB CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE USER USERNAME@'localhost' IDENTIFIED BY PASSWORD;
+GRANT CREATE, ALTER, INSERT, UPDATE, SELECT, DELETE ON DB.* TO USERNAME@'localhost';
+FLUSH PRIVILEGES;
